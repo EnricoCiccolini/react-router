@@ -6,7 +6,7 @@ function Navbar() {
 
     return (
         <>
-            <NavLink to='/'> homepages</NavLink >
+            <NavLink to='/'  > homepages</NavLink >
             <NavLink to="/chi-siamo"> chi siamo</NavLink >
             <NavLink to="/post-list"> lista dei post</NavLink >
 
@@ -16,3 +16,4 @@ function Navbar() {
 }
 
 export default Navbar
+
