@@ -1,9 +1,16 @@
+import { Outlet } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+
 function Navbar() {
 
 
     return (
         <>
-            <h1>sono nela Navbar</h1>
+            <NavLink to='/'> homepages</NavLink >
+            <NavLink to="/chi-siamo"> chi siamo</NavLink >
+            <NavLink to="/post-list"> lista dei post</NavLink >
+
+            <Outlet />
         </>
     )
 }
