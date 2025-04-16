@@ -6,10 +6,23 @@ function Navbar() {
 
     return (
         <>
-            <NavLink to='/'  > homepages</NavLink >
-            <NavLink to="/chi-siamo"> chi siamo</NavLink >
-            <NavLink to="/post-list"> lista dei post</NavLink >
+            <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                <div className="container-fluid">
 
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <NavLink className='m-3' to='/'  > homepages</NavLink >
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className='m-3' to="/chi-siamo"> chi siamo</NavLink >
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className='m-3' to="/post-list"> lista dei post</NavLink >
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
             <Outlet />
         </>
     )

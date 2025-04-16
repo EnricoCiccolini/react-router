@@ -1,9 +1,35 @@
+import axios from "axios"
+import { useEffect, useState } from "react"
+
 function PostList() {
 
+    const [post, setPost] = useState([])
 
+    function getPost() {
+        axios.get("https://jsonplaceholder.typicode.com/posts")
+            .then((res) => setPost(res.data))
+
+    }
+    useEffect(getPost, [])
+
+    console.log(post)
     return (
         <>
-            <h1>sono nell PostList</h1>
+
+
+            <div className="container m-4">
+                <h1>Lista dei post</h1>
+                <div className="m-4">
+                    {post.map((post) => (
+                        <div key={post.id} className="card" >
+                            <div className="card-body">
+                                <h5 className="card-title">{post.title}</h5>
+                                <p className="card-text">{post.body}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </>
     )
 }
