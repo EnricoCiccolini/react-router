@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 function PostList() {
 
@@ -21,10 +22,11 @@ function PostList() {
                 <h1>Lista dei post</h1>
                 <div className="m-4">
                     {post.map((post) => (
-                        <div key={post.id} className="card" >
+                        <div key={post.id} className="card m-3" >
                             <div className="card-body">
                                 <h5 className="card-title">{post.title}</h5>
                                 <p className="card-text">{post.body}</p>
+                                <Link to={`/post-list/${post.id} `}> vai al post </Link>
                             </div>
                         </div>
                     ))}
