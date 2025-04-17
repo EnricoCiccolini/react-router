@@ -13,8 +13,9 @@ function PostList() {
     }
     useEffect(getPost, [])
     const max = post.length
+    console.log(max)
 
-    console.log(post)
+
     return (
         <>
 
