@@ -39,7 +39,7 @@ function Post() {
 
 
     function getPost() {
-
+        setLoad(true)
 
         axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
             .then((res) => {
@@ -59,7 +59,7 @@ function Post() {
 
     }
     function postNextFunction() {
-
+        setLoad2(true)
 
         axios.get(`https://jsonplaceholder.typicode.com/posts/${parseInt(id) + 1}`)
             .then((res) => {
@@ -106,6 +106,7 @@ function Post() {
             <h2>erorre nella richiesta </h2>
         </div>
     }
+    console.log(`/post-list/${parseInt(id) + 1}}`)
     return (
         <>
             {
@@ -114,12 +115,9 @@ function Post() {
                         <h5 className="card-title">{post.title}</h5>
                         <p className="card-text">{post.body}</p>
                         <div className="d-flex justify-content-between">
-                            {id > 0 ? <Link to={`/post-list/${parseInt(id) - 1}`}> post precedente  </Link> : ''}
+                            {id > 1 ? <Link to={`/post-list/${parseInt(id) - 1}`}> post precedente  </Link> : <div>  </div>}
 
-                            {nextPost ? <Link to={`/post-list/${parseInt(id) + 1}}`}> post successivo  </Link> : ''}
-
-
-
+                            {nextPost ? <Link to={`/post-list/${parseInt(id) + 1}`}> post successivo  </Link> : ''}
 
                         </div>
                     </div>
