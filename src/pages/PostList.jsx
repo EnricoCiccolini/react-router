@@ -12,6 +12,7 @@ function PostList() {
 
     }
     useEffect(getPost, [])
+    const max = post.length
 
     console.log(post)
     return (

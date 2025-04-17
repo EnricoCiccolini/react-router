@@ -4,6 +4,7 @@ import Homepages from "./pages/Homepages"
 import PostList from "./pages/PostList"
 import ChiSiamo from "./pages/ChiSiamo"
 import Post from "./pages/Post"
+import Page404 from "./pages/Pagae404"
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path='/post-list' element={<PostList />} />
             <Route path='/post-list/:id' element={<Post />} />
             <Route path="/chi-siamo" element={<ChiSiamo />} />
+            <Route path="*" element={<Page404 />} />
           </Route>
 
         </Routes>
